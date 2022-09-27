@@ -2,9 +2,10 @@
   "name": "contact-card",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": "true",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/rockwoodc/contact-card/issues"
   },
-  "homepage": "https://github.com/rockwoodc/contact-card#readme"
+  "homepage": "https://github.com/rockwoodc/contact-card#readme",
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
 }
