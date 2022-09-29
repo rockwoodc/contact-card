@@ -1,4 +1,6 @@
 const path = require("path");
+//needed to copy over the html template to the dist folder created
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: "./src/js/index.js",
@@ -6,11 +8,17 @@ module.exports = {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
-  mode: "development",
-  //rule allows us to handle images
+  plugins: [
+    //will import index.html template into newly created dist folders
+    new HtmlWebpackPlugin({
+      template: './index.html',
+      title: 'index.html',
+    }),
+],
   module: {
     rules: [
       {
+        //rule allows us to handle images
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
       },
